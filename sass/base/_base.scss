@@ -1,0 +1,110 @@
+/******************************************************     Polices     *************************************************************************/
+
+//Police pour l'écran d'introduction
+@font-face {
+  font-family: 'street_credregular';
+  src: url('../../font/street-creed/street_cred-webfont.woff2') format('woff2'),
+       url('../../font/street-creed/street_cred-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Police pour la page d'accueil
+@font-face {
+  font-family: 'arcregular';
+  src: url('../../font/arc/arc_regular-webfont.woff2') format('woff2'),
+       url('../../font/arc/arc_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Police de texte
+@font-face {
+  font-family: 'aukim';
+  src: url('../../font/aukim/aukimcondensed-webfont.woff2') format('woff2'),
+       url('../../font/aukim/aukimcondensed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Police pour les cadres du portfolio
+@font-face {
+  font-family: 'darmstadt';
+  src: url('../../font/darmstadt/darmstadt_arts-webfont.woff2') format('woff2'),
+       url('../../font/darmstadt/darmstadt_arts-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/*******************************************************                ****************************************************************************/
+
+
+/************************************************************  Paramètres généraux  *****************************************************/
+
+* {                                                                
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+h1 {
+  color: white;
+}
+
+//Fond d'écran pour les pages présentations et portfolio
+.BackgroundPict { background-image: url("../../picture/circuit_imprime.jpg"); }
+
+/**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
+//Nous créons ces condition pour que le texte en page d'accueil ne soit pas impacté
+
+
+//Les gros titres
+.baseText h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px -8px 60px -8px;
+  background: $background-Text;
+  font-family: 'arcregular', verdana, arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center; 
+  text-shadow: $color-pr 1px 0px 10px;
+}
+
+//Les titres secondaires
+.baseText h2 {
+  font-size: 32px;
+  color: $color-h2;
+  margin-bottom: 30px;
+}
+
+//Paramètres généraux du texte
+.baseText p {
+  font-family: 'aukim', verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+//Paramètres du texte à puce           
+ul {
+  font-family: 'aukim', verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.interligneTitre {margin-top: 90px;}
+
+
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+  .baseText h2 { margin-top: 50px; }
+}
+

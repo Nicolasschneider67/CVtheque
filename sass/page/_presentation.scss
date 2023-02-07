@@ -1,0 +1,188 @@
+
+/*********************************************     Partie globale   ****************************************************************/
+
+//Ecart entre le 1er titre et le header
+.whoIAm {
+    margin-top: 140px;
+    margin-bottom: 100px;
+}
+
+//Cadre contenant les textes
+.textPresentation {  
+    @include cadreText;
+
+    //Nous réalisons une barre de soulignement personnalisée avec un pseudoélément
+    h2:after {
+        content: "";
+        position: absolute;
+        left: 39px;
+        width: 250px;
+        height: 3px;
+        margin-top: 39px;
+        background: linear-gradient(to right, $color-h2 100px, $color-pr);
+    }
+}
+
+
+/*********************************************        Partie activité   *************************************************************/
+
+//Carte principale
+.activities {
+    margin: 50px 50px 0px 50px;
+
+    .activitiesCard {
+        display: flex;
+        margin-bottom: 20px;
+    }
+}
+
+//Texte des icônes
+.activitiesCard p {
+    margin-top: -7px;
+    font-size: 16px;
+}
+
+//Texte des icônes
+.activitiesCard--hike p {margin-top: 5px;}
+
+
+/*******************************************************     Icones         ********************************************************************/
+
+//Toutes les icônes n'ont pas la même taille, nous devons donc appliquer des paramètres spécifiques
+#guitar, #plane, #hike {
+    color: white;
+    font-size: 50px;
+    margin-right: 20px;
+}
+
+#plane { font-size: 41px; }
+
+#hike { margin-right: 20px; }
+
+
+
+/*****************************************************     Partie des diplômes      ************************************************************/
+
+//Partie à puce
+.liDegrees {
+    display: flex;
+    margin-bottom: 70px;
+
+    li {
+        width: 500px;
+        text-align: start;
+    }
+    
+
+    p {
+        font-size: 15px;
+        padding-left: 50px;
+        margin-top: 0px;
+    }
+}
+
+.liDegrees--commerce li  { width: 600px; }
+
+.liDegrees--web li { width: 650px; }
+
+
+
+/*******************************************  La partie des icones se trouve dans le dossier components   **************************************/
+
+/************************************************************************************************************************************************/
+
+/**********************************************       Partie des compétences en développement web   **********************************************/
+
+//Carte mise en display pour une meilleure juxtaposition
+
+//Caractéristique du texte
+.TextDegrees1 {
+    position: relative;
+    bottom: 320px;
+    margin-left: 500px;
+}
+
+.TextDegrees2 {
+    margin-top: -55px;
+}
+
+
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+    //Carde principale
+    .textPresentation { margin: 0px; }
+    .textPresentation h2 { margin-top: 20px; }
+    .interligneTitre { margin-top: 80px!important; }
+
+    //Gros titres
+    .baseText h1 {
+        font-size: 40px;
+        margin-top: -75px!important;
+        margin-bottom: 40px!important;
+        line-height: 32px;
+      }
+
+    .textPresentation { margin-bottom: 150px;}
+
+    //Barre de soulignement sous les titres
+    .textPresentation h2:after {
+        left: 30px;
+        margin-top: 40px;
+    }
+
+
+    //Partie activités
+    .activities { margin: 40px 0px 10px 0px;}
+
+
+    //Partie présentation des diplômes
+    .titlePresentation { 
+        margin: 0px 0px 20px 0px!important;
+        line-height: 50px!important;
+     }
+
+     .liDegrees {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+     }
+
+     .liDegrees li { 
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: $color-pr;
+        font-weight: bold;
+     }
+
+     .liDegrees p { padding-left: 0px; }
+
+     .myDegrees {
+        margin-bottom: 60px; 
+        margin-top: 100px;
+    }
+
+     .myDegrees ul { 
+        padding-left: 0px;
+        list-style: none;
+     }
+
+
+     //Texte rattaché aux icones de développement
+     .TextDegrees { 
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
+
+        .TextDegrees1 {
+            position: static;
+            margin: 0px;
+            margin-bottom: 90px;
+        }
+     }
+
+}

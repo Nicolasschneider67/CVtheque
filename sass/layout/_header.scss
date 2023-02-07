@@ -1,0 +1,133 @@
+//Card principale comprenant les 3 onglets
+.cardHeader {
+    background: #090708;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -7px;
+    box-shadow: 0px 8px 18px white;
+}
+
+//Cadre contenant le logo
+.presentationHeader--accueil {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 30px;
+}
+
+
+
+/********************************************************    Animation des cadres au survol      ***************************************/
+
+.presentationHeader {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    color: $color-text;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'street_credregular', verdana, arial, helvetica, sans-serif;
+
+    &:before {
+        content: "";
+        position: absolute;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+        top: -2px;
+        left: -2px;
+        border: 2px solid transparent;
+        background-color: transparent;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+        top: -2px;
+        left: -2px;
+        border: 2px solid transparent;
+        background-color: transparent;
+    }
+}
+
+.presentationHeader a {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+}
+
+.presentationHeader:hover a{
+transition: 1s;
+color: $color-pr;
+}
+
+.presentationHeader:hover:before {
+    animation: borderAnimate 1s linear forwards;
+}
+
+.presentationHeader:hover:after {
+    animation: borderAnimate2 1s linear forwards;
+}
+
+
+
+/********************************************        Résolution téléphone        *********************************************************************/
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .cardHeader { 
+        position: relative;
+        z-index: 5; }
+
+    //En résolution téléphone nous ne laissons apparaître que le logo du site
+    .presentationHeader {display: none;}
+    .presentationHeader--accueil { 
+        display: flex;
+        width: 100%;
+    }
+    .logoHeader { 
+        margin: -10px auto 20px auto;
+        width: 90px;
+     }
+
+    //Nous annulons l'animation en basse résolution
+    .presentationHeader:hover:before { animation: none }
+    .presentationHeader:hover:after { animation: none }   
+}
+
+
+
+/********************************************        Résolution grand téléphone / tablette        *********************************************************************/
+
+//Nous modifions la taille de police des cardes ainsi que du logo. Nous faisons disparaître le logo du milieu
+@media screen and (min-width: 481px) and (max-width: 645px) {
+
+    .cardHeader { 
+        position: relative;
+        z-index: 5; }
+
+    .presentationHeader { font-size: 40px!important; }
+
+    .presentationHeader:hover:before, .presentationHeader:hover:after {animation: none;}
+
+    .logoHeader { display: none; }
+
+    .cardHeader { padding: 0px 20px 0px 20px; }
+}
+
+//En faible résolution nous faisons disparaitre le logo pour un meilleur affichage de l'alignement
+@media screen and (min-width: 645px) and (max-width: 1100px) {
+    .presentationHeader--accueil { display: none; }
+}
+
+
+@media screen and (min-width: 646px) and (max-width: 800px) {
+    .cardHeader { 
+        position: relative;
+        z-index: 5; }
+}

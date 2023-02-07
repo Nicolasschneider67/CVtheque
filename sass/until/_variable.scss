@@ -1,0 +1,16 @@
+//Gestion des couleurs de police
+$color-pr: rgb(39, 201, 216);
+$color-h2: rgb(231, 109, 27);
+$color-text: white;
+
+//Gestion de la couleur de fond des paragraphes
+$background-Text : #0f0f0fec;
+
+//Rapidité de l'animation des cardes portfolio
+$animationDuration: 1.5s;
+
+//Définition de l'animation du texte portfolio
+$transitionTextPortfolio: top $animationDuration;
+
+//Définition de l'animation du texte portfolio en résolution téléphone
+$transitionTextPortfolioPhone: translate 2s, display 3s;

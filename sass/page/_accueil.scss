@@ -1,0 +1,227 @@
+/*********************************************************  Page d'introduction    ***********************************************************/
+
+//Le but est de faire un premier écran pour souhaiter la bienvenue à l'utilisateur 
+
+#intro {
+    animation: pictureIntro 27s forwards;
+    @include fullScreen (-8px);
+    background-image: url("../../picture/planete.jpg");
+    z-index: 4;
+}
+
+//Flèche pour passer l'animation du début
+#arrowNext{
+    position: absolute;
+    left: 48%;
+    top: 10%;
+    font-size: 40px;
+    color: white;
+    text-shadow: $color-pr 1px 0px 10px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+//Nous donnons un cadre général sur lequel se greffera chaque message adapté en fonction de sa taille
+.cardIntro {
+    animation: PopUp 23.5s 0.7s forwards;
+    scale: 0;
+    width: 550px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    top: 35%;
+    background-color: rgba(14, 14, 14, 0.925);
+    border-radius: 25px 25px 15px 15px;
+    border: 1px groove $color-pr;  
+    box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+
+
+    .cardIntro--bonjour {
+        animation: FadeIn 4s 3s;
+        animation-iteration-count: 1;
+        @include formTextIntro; 
+        font-size: 80px;
+        top: 60px;
+    }
+
+    .cardIntro--bienvenu  {
+        animation: FadeIn 5.5s 7s;
+        animation-iteration-count: 1;
+        @include formTextIntro;
+        position: relative;
+        font-size: 50px;
+        top: 25px;
+        line-height: 80px;
+    }
+
+    .cardIntro--curiculum {
+        animation: FadeIn 4s 12.5s;
+        animation-iteration-count: 1;
+        @include formTextIntro;
+        font-size: 50px;
+    }
+
+    #resolution{
+        animation: FadeIn 7s 16.5s;
+        animation-iteration-count: 1;
+        @include formTextIntro;
+        font-size: 40px;
+        top: -10px;
+        line-height: 50px;
+    }
+}
+
+
+/*********************************************************  Page d'acceuil    *////////////////////////////////////////////////////////////
+
+//Gestion du cadre principal de la page d'accueil
+.blocAccueil {
+    z-index: 3;
+    @include fullScreen (-8px);
+    display: flex;
+    background-color: rgb(0, 0, 0);
+}
+
+//Nous créons deux blocs distincts à cause de l'animation du milieu de page
+//Bloc "présentation"
+.presentation {
+    width: 50%;
+    overflow: hidden; //Nous rajoutons cette condition pour que l'animation de zoom ne dépasse pas du cadre 
+
+//Nous créons une balise spécifique pour réaliser une animation d'opacité sans que le texte soit affecté
+    &__img{ 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2;
+
+        &:hover {
+        opacity: 1;
+        transform: scale(1.2, 1.2);
+        cursor: pointer;
+        transition: opacity 2s 0.1s, transform 3s 1.2s;
+        }
+    }
+    
+    &__title h1 {
+        @include formTextHome;
+        top: 30%;
+        left: 5%;
+    }
+}
+
+//Bloc "portfolio"
+.portfolio {
+    @extend .presentation;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2; 
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.2, 1.2);
+            cursor: pointer;
+            transition: opacity 2s 0.1s, transform 3s 1.2s;
+        }   
+    }
+
+    &__title h1 {
+        @include formTextHome;
+        top: 60%;
+        right: 5%;
+    }
+}
+
+
+
+
+
+/*******************************************        Résolution à 1000px et en dessous     *******************************************************/
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    //Image de fond
+    #intro { 
+        background-image: url("../../picture/planete_phone.jpg");
+        background-size: cover;
+    background-repeat: no-repeat;
+    }
+
+    //Police des cardes en Introduction
+    .cardIntro--bonjour {
+        top: 0px;
+        font-size: 60px !important;
+    }
+
+    //Flèche pour stopper l'animation
+    #arrowNext { left: 45%; }
+
+    //Titres en page d'accueil
+    .presentation__title h1 { top: 5%; }
+    .portfolio__title h1 { top: 69%; }
+
+    //Images de fond en accueil
+    .presentation__img { width: initial; }
+    .portfolio__img { object-fit: initial;}
+
+}
+
+@media screen and (min-width: 901px) and (max-width: 1300px)  { //Nous définissions un media query spécifique aux titres
+   
+    .presentation__title h1 { top: 5%; }
+    .presentation__img { width: initial; }
+    .portfolio__img { object-fit: initial;}
+}
+
+/**********************************************       Résolution pour téléphone        ***********************************************************/
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+
+    //Carde contenant les textes
+    .cardIntro {
+        width: 300px;
+    }
+
+    //Police des cardes
+    .cardIntro--bonjour {
+        top: 0px;
+        font-size: 60px !important;
+    }
+
+    .cardIntro--bienvenu {
+        font-size: 30px!important;
+        line-height: 60px!important;
+        top: 45px!important;
+    }
+
+    .cardIntro--curiculum {
+        font-size: 40px!important;
+        top: 50px!important;
+        line-height: 60px!important;
+    }
+
+    #resolution{
+        font-size: 26px!important;
+        top: 0px!important;
+    }
+
+    //Titres en pages de présentation
+    .presentation__title h1{
+        font-size: 40px;
+        left: 7%;
+        top: 8%;
+    }
+
+    .portfolio__title h1 {
+        font-size: 40px;
+        right: 7%;
+        top: 75%;
+    }
+
+    //Images de fond en présentation
+    .presentation__img, .portfolio__img { display: none; }
+
+    
+}

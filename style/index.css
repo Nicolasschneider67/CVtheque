@@ -1,0 +1,1479 @@
+@charset "UTF-8";
+/**************************************************    Page accueil       ********************************************************/
+/************************************************       Page de présentation        **************************************************************/
+/******************************************  Animation à l'entrée du site  ********************************************************/
+@-webkit-keyframes pictureIntro {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pictureIntro {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes PopUp {
+  0% {
+    scale: 0;
+  }
+  8% {
+    scale: 1;
+  }
+  90% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes PopUp {
+  0% {
+    scale: 0;
+  }
+  8% {
+    scale: 1;
+  }
+  90% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/****************************************  Animation en page de présentation    *************************************************/
+@-webkit-keyframes borderAnimate {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+@keyframes borderAnimate {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+@-webkit-keyframes borderAnimate2 {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  50% {
+    width: 0%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+}
+@keyframes borderAnimate2 {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  50% {
+    width: 0%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+}
+/***************************************************         Header       ********************************************************/
+@-webkit-keyframes pulseHeader {
+  from {
+    box-shadow: 0 0 0 0 rgba(3, 149, 229, 0.4);
+  }
+  to {
+    box-shadow: 0 0 0 45px rgba(3, 149, 229, 0);
+  }
+}
+@keyframes pulseHeader {
+  from {
+    box-shadow: 0 0 0 0 rgba(3, 149, 229, 0.4);
+  }
+  to {
+    box-shadow: 0 0 0 45px rgba(3, 149, 229, 0);
+  }
+}
+/*site ou je l'ai trouvé https://web-eau.net/blog/15-animations-css-vraiment-bluffantes*/
+/*Définition des paramètres généraux*/
+/*Positionnement de l'animation*/
+.animation--principale::before, .animation--principale::after, .animation--principale {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/***************************************************    Cadre       **************************************************************************/
+.animation--principale {
+  z-index: 3;
+  transform: rotate(45deg);
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  color: rgb(39, 201, 216);
+  border: 2px solid rgb(39, 201, 216);
+  box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}
+.animation--principale::before, .animation--principale::after {
+  content: "";
+  margin: -5%;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-animation: clipMe 7s linear infinite;
+          animation: clipMe 7s linear infinite;
+}
+.animation--principale::before {
+  -webkit-animation-delay: -3.5s;
+          animation-delay: -3.5s;
+}
+
+@-webkit-keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
+}
+
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
+}
+/********************************************         Image dans le cadre        **************************************************************/
+.animation__picture {
+  position: absolute;
+  top: 39px;
+  left: 40px;
+  width: 130px;
+  transform: rotate(-45deg);
+}
+
+/************************************************  Partie des icônes dans les qualification & compétences   *********************************/
+.myDegrees--skill {
+  -webkit-animation: iconeRotate 9s linear infinite;
+          animation: iconeRotate 9s linear infinite;
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 90px;
+  margin-right: 50px;
+}
+.myDegrees--skill .skillICone {
+  -webkit-animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 7.9s;
+          animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 7.9s;
+  position: absolute;
+  width: 80px;
+  top: -40px;
+  left: 140px;
+}
+.myDegrees--skill .skillICone--css {
+  -webkit-animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 6.3s;
+          animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 6.3s;
+  top: 80px;
+  left: 270px;
+}
+.myDegrees--skill .skillICone--saas {
+  -webkit-animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 4.4s;
+          animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 4.4s;
+  width: 100px;
+  left: 160px;
+  top: 240px;
+}
+.myDegrees--skill .skillICone--js {
+  -webkit-animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 1s;
+          animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 1s;
+  width: 70px;
+  left: -15px;
+  top: 55px;
+}
+.myDegrees--skill .skillICone--react {
+  -webkit-animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 2.7s;
+          animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 2.7s;
+  left: 0px;
+  top: 220px;
+}
+
+@-webkit-keyframes iconeRotate {
+  0% {
+    rotate: -360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes iconeRotate {
+  0% {
+    rotate: -360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@-webkit-keyframes iconeRotateInver {
+  0% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@keyframes iconeRotateInver {
+  0% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@-webkit-keyframes scaleIcone {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.5;
+  }
+  20% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes scaleIcone {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.5;
+  }
+  20% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .myDegrees--skill {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .myDegrees--skill .skillICone {
+    width: 70px;
+    top: -60px;
+    left: 50px;
+  }
+  .myDegrees--skill .skillICone--css {
+    top: 0px;
+    left: 140px;
+  }
+  .myDegrees--skill .skillICone--js {
+    left: -55px;
+    top: -10px;
+    width: 60px;
+  }
+  .myDegrees--skill .skillICone--react {
+    left: -30px;
+    top: 100px;
+  }
+  .myDegrees--skill .skillICone--saas {
+    width: 90px !important;
+    left: 85px;
+    top: 90px;
+  }
+}
+.cardHeader {
+  background: #090708;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: -7px;
+  box-shadow: 0px 8px 18px white;
+}
+
+.presentationHeader--accueil {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 30px;
+}
+
+/********************************************************    Animation des cadres au survol      ***************************************/
+.presentationHeader {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+}
+.presentationHeader:before {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  top: -2px;
+  left: -2px;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+.presentationHeader:after {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  top: -2px;
+  left: -2px;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+.presentationHeader a {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+}
+
+.presentationHeader:hover a {
+  transition: 1s;
+  color: rgb(39, 201, 216);
+}
+
+.presentationHeader:hover:before {
+  -webkit-animation: borderAnimate 1s linear forwards;
+          animation: borderAnimate 1s linear forwards;
+}
+
+.presentationHeader:hover:after {
+  -webkit-animation: borderAnimate2 1s linear forwards;
+          animation: borderAnimate2 1s linear forwards;
+}
+
+/********************************************        Résolution téléphone        *********************************************************************/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+  .presentationHeader {
+    display: none;
+  }
+  .presentationHeader--accueil {
+    display: flex;
+    width: 100%;
+  }
+  .logoHeader {
+    margin: -10px auto 20px auto;
+    width: 90px;
+  }
+  .presentationHeader:hover:before {
+    -webkit-animation: none;
+            animation: none;
+  }
+  .presentationHeader:hover:after {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+/********************************************        Résolution grand téléphone / tablette        *********************************************************************/
+@media screen and (min-width: 481px) and (max-width: 645px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+  .presentationHeader {
+    font-size: 40px !important;
+  }
+  .presentationHeader:hover:before, .presentationHeader:hover:after {
+    -webkit-animation: none;
+            animation: none;
+  }
+  .logoHeader {
+    display: none;
+  }
+  .cardHeader {
+    padding: 0px 20px 0px 20px;
+  }
+}
+@media screen and (min-width: 645px) and (max-width: 1100px) {
+  .presentationHeader--accueil {
+    display: none;
+  }
+}
+@media screen and (min-width: 646px) and (max-width: 800px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+}
+.navbar, .navbarPortfolio {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  right: 0px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: #090708;
+}
+.navbar .navbarIcon, .navbarPortfolio .navbarIcon {
+  display: flex;
+  flex-direction: column;
+}
+
+/***********************************************************  Gestion individuelles des icones     **************************************************/
+.fa-user-tie, .fa-comments, .fa-graduation-cap {
+  font-size: 40px;
+  color: rgb(39, 201, 216);
+  padding: 10px 10px 10px 5px;
+}
+.fa-user-tie:hover, .fa-comments:hover, .fa-graduation-cap:hover {
+  color: white;
+}
+
+.navbarLogo, .navbarPortfolio .navbarLogoPortfolio {
+  width: 50px;
+  padding-top: 10px;
+}
+
+/**********************************************************    Bulle de contact    ***************************************************************/
+#commentBubble {
+  position: relative;
+  right: 220px;
+  bottom: 10px;
+  width: 0px;
+  height: 0px;
+}
+
+#pictCommentBubble {
+  width: 310px;
+  height: 150px;
+  color: rgb(39, 201, 216);
+}
+
+.textCommentBubble {
+  position: absolute;
+  white-space: nowrap;
+  text-align: start;
+  top: 40px;
+  left: 20px;
+  color: white;
+}
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .navbar, .navbarPortfolio {
+    flex-direction: row;
+    width: 310px;
+    left: 50%;
+    margin-left: -155px;
+  }
+  .navbarIcon {
+    flex-direction: row !important;
+  }
+  .navbarLogo, .navbarPortfolio .navbarLogoPortfolio {
+    width: 70px;
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .fa-user-tie, .fa-comments, .fa-graduation-cap {
+    font-size: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/***********************************************    Paramètres de la navbar à la page Portfolio     ******************************************/
+.navbarPortfolio {
+  top: 25%;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 8px 1px white;
+}
+.navbarPortfolio .navbarLogoPortfolio {
+  width: 55px;
+  margin-bottom: 20px;
+}
+.navbarPortfolio #contactPortfolio {
+  font-size: 40px;
+}
+
+/***********************************************        Résolution téléphone        ******************************************************************/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .navbarPortfolio {
+    display: flex;
+    justify-content: space-evenly;
+    height: 76px;
+    width: 200px;
+    margin-left: -100px;
+    top: 5%;
+  }
+  .navbarLogoPortfolio {
+    width: 70px !important;
+    margin-top: -15px;
+  }
+  #contactPortfolio {
+    font-size: 47px !important;
+    margin-top: -15px;
+  }
+  .navbarPortfolio .textCommentBubble {
+    margin-left: 50px;
+  }
+  .navbarPortfolio #pictCommentBubble {
+    margin-left: 50px;
+  }
+}
+@media screen and (min-width: 646px) and (max-width: 799px) {
+  .navbarPortfolio {
+    top: 10%;
+  }
+}
+/******************************************************     Polices     *************************************************************************/
+@font-face {
+  font-family: "street_credregular";
+  src: url("../../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../../font/street-creed/street_cred-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "arcregular";
+  src: url("../../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../../font/arc/arc_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "aukim";
+  src: url("../../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../../font/aukim/aukimcondensed-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "darmstadt";
+  src: url("../../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*******************************************************                ****************************************************************************/
+/************************************************************  Paramètres généraux  *****************************************************/
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+h1 {
+  color: white;
+}
+
+.BackgroundPict {
+  background-image: url("../../picture/circuit_imprime.jpg");
+}
+
+/**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
+.baseText h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px -8px 60px -8px;
+  background: rgba(15, 15, 15, 0.9254901961);
+  font-family: "arcregular", verdana, arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+}
+
+.baseText h2 {
+  font-size: 32px;
+  color: rgb(231, 109, 27);
+  margin-bottom: 30px;
+}
+
+.baseText p {
+  font-family: "aukim", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+ul {
+  font-family: "aukim", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.interligneTitre {
+  margin-top: 90px;
+}
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .baseText h2 {
+    margin-top: 50px;
+  }
+}
+/*********************************************************  Page d'introduction    ***********************************************************/
+#intro {
+  -webkit-animation: pictureIntro 27s forwards;
+          animation: pictureIntro 27s forwards;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -8px;
+  background-image: url("../../picture/planete.jpg");
+  z-index: 4;
+}
+
+#arrowNext {
+  position: absolute;
+  left: 48%;
+  top: 10%;
+  font-size: 40px;
+  color: white;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.cardIntro {
+  -webkit-animation: PopUp 23.5s 0.7s forwards;
+          animation: PopUp 23.5s 0.7s forwards;
+  scale: 0;
+  width: 550px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  top: 35%;
+  background-color: rgba(14, 14, 14, 0.925);
+  border-radius: 25px 25px 15px 15px;
+  border: 1px groove rgb(39, 201, 216);
+  box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}
+.cardIntro .cardIntro--bonjour {
+  -webkit-animation: FadeIn 4s 3s;
+          animation: FadeIn 4s 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  scale: 1;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(14, 14, 14, 0);
+  box-shadow: 0px 0px 0px 0px rgba(148, 30, 30, 0.3) inset;
+  border: 0px solid blue;
+  text-align: center;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  opacity: 0;
+  font-size: 80px;
+  top: 60px;
+}
+.cardIntro .cardIntro--bienvenu {
+  -webkit-animation: FadeIn 5.5s 7s;
+          animation: FadeIn 5.5s 7s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  scale: 1;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(14, 14, 14, 0);
+  box-shadow: 0px 0px 0px 0px rgba(148, 30, 30, 0.3) inset;
+  border: 0px solid blue;
+  text-align: center;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  opacity: 0;
+  position: relative;
+  font-size: 50px;
+  top: 25px;
+  line-height: 80px;
+}
+.cardIntro .cardIntro--curiculum {
+  -webkit-animation: FadeIn 4s 12.5s;
+          animation: FadeIn 4s 12.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  scale: 1;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(14, 14, 14, 0);
+  box-shadow: 0px 0px 0px 0px rgba(148, 30, 30, 0.3) inset;
+  border: 0px solid blue;
+  text-align: center;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  opacity: 0;
+  font-size: 50px;
+}
+.cardIntro #resolution {
+  -webkit-animation: FadeIn 7s 16.5s;
+          animation: FadeIn 7s 16.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  scale: 1;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(14, 14, 14, 0);
+  box-shadow: 0px 0px 0px 0px rgba(148, 30, 30, 0.3) inset;
+  border: 0px solid blue;
+  text-align: center;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  opacity: 0;
+  font-size: 40px;
+  top: -10px;
+  line-height: 50px;
+}
+
+/*********************************************************  Page d'acceuil    */
+.blocAccueil {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -8px;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.presentation, .portfolio {
+  width: 50%;
+  overflow: hidden;
+}
+.presentation__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.2;
+}
+.presentation__img:hover {
+  opacity: 1;
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+  transition: opacity 2s 0.1s, transform 3s 1.2s;
+}
+.presentation__title h1 {
+  font-size: 60px;
+  font-family: "arcregular", verdana, arial, helvetica, sans-serif;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  background-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.portfolio__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.2;
+}
+.portfolio__img:hover {
+  opacity: 1;
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+  transition: opacity 2s 0.1s, transform 3s 1.2s;
+}
+.portfolio__title h1 {
+  font-size: 60px;
+  font-family: "arcregular", verdana, arial, helvetica, sans-serif;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+  background-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  position: absolute;
+  top: 60%;
+  right: 5%;
+}
+
+/*******************************************        Résolution à 1000px et en dessous     *******************************************************/
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  #intro {
+    background-image: url("../../picture/planete_phone.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .cardIntro--bonjour {
+    top: 0px;
+    font-size: 60px !important;
+  }
+  #arrowNext {
+    left: 45%;
+  }
+  .presentation__title h1 {
+    top: 5%;
+  }
+  .portfolio__title h1 {
+    top: 69%;
+  }
+  .presentation__img {
+    width: initial;
+  }
+  .portfolio__img {
+    -o-object-fit: initial;
+       object-fit: initial;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+  .presentation__title h1 {
+    top: 5%;
+  }
+  .presentation__img {
+    width: initial;
+  }
+  .portfolio__img {
+    -o-object-fit: initial;
+       object-fit: initial;
+  }
+}
+/**********************************************       Résolution pour téléphone        ***********************************************************/
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .cardIntro {
+    width: 300px;
+  }
+  .cardIntro--bonjour {
+    top: 0px;
+    font-size: 60px !important;
+  }
+  .cardIntro--bienvenu {
+    font-size: 30px !important;
+    line-height: 60px !important;
+    top: 45px !important;
+  }
+  .cardIntro--curiculum {
+    font-size: 40px !important;
+    top: 50px !important;
+    line-height: 60px !important;
+  }
+  #resolution {
+    font-size: 26px !important;
+    top: 0px !important;
+  }
+  .presentation__title h1 {
+    font-size: 40px;
+    left: 7%;
+    top: 8%;
+  }
+  .portfolio__title h1 {
+    font-size: 40px;
+    right: 7%;
+    top: 75%;
+  }
+  .presentation__img, .portfolio__img {
+    display: none;
+  }
+}
+/*********************************************     Partie globale   ****************************************************************/
+.whoIAm {
+  margin-top: 140px;
+  margin-bottom: 100px;
+}
+
+.textPresentation {
+  margin: 0px 10px 30px 10px;
+  padding: 5px 20px 10px 20px;
+  border-radius: 15px;
+  background: rgba(15, 15, 15, 0.9254901961);
+  box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}
+.textPresentation h2:after {
+  content: "";
+  position: absolute;
+  left: 39px;
+  width: 250px;
+  height: 3px;
+  margin-top: 39px;
+  background: linear-gradient(to right, rgb(231, 109, 27) 100px, rgb(39, 201, 216));
+}
+
+/*********************************************        Partie activité   *************************************************************/
+.activities {
+  margin: 50px 50px 0px 50px;
+}
+.activities .activitiesCard {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.activitiesCard p {
+  margin-top: -7px;
+  font-size: 16px;
+}
+
+.activitiesCard--hike p {
+  margin-top: 5px;
+}
+
+/*******************************************************     Icones         ********************************************************************/
+#guitar, #plane, #hike {
+  color: white;
+  font-size: 50px;
+  margin-right: 20px;
+}
+
+#plane {
+  font-size: 41px;
+}
+
+#hike {
+  margin-right: 20px;
+}
+
+/*****************************************************     Partie des diplômes      ************************************************************/
+.liDegrees {
+  display: flex;
+  margin-bottom: 70px;
+}
+.liDegrees li {
+  width: 500px;
+  text-align: start;
+}
+.liDegrees p {
+  font-size: 15px;
+  padding-left: 50px;
+  margin-top: 0px;
+}
+
+.liDegrees--commerce li {
+  width: 600px;
+}
+
+.liDegrees--web li {
+  width: 650px;
+}
+
+/*******************************************  La partie des icones se trouve dans le dossier components   **************************************/
+/************************************************************************************************************************************************/
+/**********************************************       Partie des compétences en développement web   **********************************************/
+.TextDegrees1 {
+  position: relative;
+  bottom: 320px;
+  margin-left: 500px;
+}
+
+.TextDegrees2 {
+  margin-top: -55px;
+}
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .textPresentation {
+    margin: 0px;
+  }
+  .textPresentation h2 {
+    margin-top: 20px;
+  }
+  .interligneTitre {
+    margin-top: 80px !important;
+  }
+  .baseText h1 {
+    font-size: 40px;
+    margin-top: -75px !important;
+    margin-bottom: 40px !important;
+    line-height: 32px;
+  }
+  .textPresentation {
+    margin-bottom: 150px;
+  }
+  .textPresentation h2:after {
+    left: 30px;
+    margin-top: 40px;
+  }
+  .activities {
+    margin: 40px 0px 10px 0px;
+  }
+  .titlePresentation {
+    margin: 0px 0px 20px 0px !important;
+    line-height: 50px !important;
+  }
+  .liDegrees {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+  .liDegrees li {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: rgb(39, 201, 216);
+    font-weight: bold;
+  }
+  .liDegrees p {
+    padding-left: 0px;
+  }
+  .myDegrees {
+    margin-bottom: 60px;
+    margin-top: 100px;
+  }
+  .myDegrees ul {
+    padding-left: 0px;
+    list-style: none;
+  }
+  .TextDegrees {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+  .TextDegrees .TextDegrees1 {
+    position: static;
+    margin: 0px;
+    margin-bottom: 90px;
+  }
+}
+/*********************************************************     Le cadre de visualitation de chaque site   **************************************/
+.interligneTitre--portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.screenPng {
+  width: 650px;
+  height: 519px;
+  padding: 50px;
+}
+
+/*****************************************************   Les titres des cadres      ***********************************************************/
+.screenPortfolioTitle {
+  position: absolute;
+  top: 317px;
+  left: 270px;
+  font-family: "darmstadt", "arcregular", verdana, arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.screenPortfolioTitle--myfood {
+  left: 225px;
+}
+
+.screenPortfolioTitle--panthere {
+  left: 200px;
+}
+
+.screenPortfolioTitle--kanap {
+  left: 270px;
+}
+
+.screenPortfolioTitle--hotSauce {
+  left: 220px;
+}
+
+.screenPortfolioTitle--Groupomania {
+  left: 200px;
+}
+
+/**************   Les images de chaque site présenté qui sont inclues comme pseudoéléments pour s'emboiter correctement dans les cadres ******/
+.imgPortfolio {
+  position: relative;
+}
+.imgPortfolio::after {
+  content: "";
+  background-image: url("../../picture/portfolio/Booki.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  width: 517px;
+  height: 275px;
+  top: 65px;
+  left: 66px;
+  border-radius: 5px 5px 0px 0px;
+  cursor: pointer;
+}
+
+.imgPortfolio--omyFood::after {
+  content: "";
+  background-image: url("../../picture/portfolio/myfood.png");
+  background-size: cover;
+}
+
+.imgPortfolio--panthere::after {
+  content: "";
+  background-image: url("../../picture/portfolio/panthere.png");
+  background-size: cover;
+}
+
+.imgPortfolio--kanap::after {
+  content: "";
+  background-image: url("../../picture/portfolio/kanap.png");
+  background-size: cover;
+}
+
+.imgPortfolio--hotSauce::after {
+  content: "";
+  background-image: url("../../picture/portfolio/hotSauce.png");
+  background-size: cover;
+}
+
+.imgPortfolio--Groupomania::after {
+  content: "";
+  background-image: url("../../picture/portfolio/groupomania.png");
+  background-size: cover;
+}
+
+/***********************************************      Animation au clic des cardes        ***************************************************************/
+#screenBooky, #screenFood, #screenPanthere, #screenKanap, #screenSauce, #screenGroupomania {
+  transition: height 1.5s;
+}
+
+#screenBooky.moove, #screenFood.moove {
+  height: 830px;
+}
+
+#screenPanthere.moove {
+  height: 850px;
+}
+
+#screenKanap.moove {
+  height: 780px;
+}
+
+#screenSauce.moove {
+  height: 730px;
+}
+
+#screenGroupomania.moove {
+  height: 750px;
+}
+
+#tittleBooky, #tittleFood, #tittlePanthere, #tittleKanap, #tittleSauce, #tittleGroupomania {
+  transition: top 1.5s;
+}
+
+#tittleBooky.moove, #tittleFood.moove {
+  top: 550px;
+}
+
+#tittlePanthere.moove {
+  top: 570px;
+}
+
+#tittleKanap.moove {
+  top: 520px;
+}
+
+#tittleSauce.moove {
+  top: 480px;
+}
+
+#tittleGroupomania.moove {
+  top: 490px;
+}
+
+/***********************************************       Gestion du texte au clic       ********************************************************/
+.textPortfolio {
+  width: 520px;
+  position: absolute;
+  top: 120px;
+  left: 65px;
+  padding: 20px 10px 20px 10px;
+  background: #121212;
+  color: white;
+  line-height: 22px;
+  text-align: justify;
+}
+
+#textPortfolioBooky, #textPortfolioFood {
+  transition: top 1.5s;
+}
+
+#textPortfolioPanthere {
+  transition: top 1.5s;
+  top: 90px;
+}
+
+#textPortfolioKanap {
+  transition: top 1.5s;
+  top: 130px;
+}
+
+#textPortfolioSauce {
+  transition: top 1.5s;
+  top: 180px;
+}
+
+#textPortfolioGroupomania {
+  transition: top 1.5s;
+  top: 160px;
+}
+
+#textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioPanthere.moove, #textPortfolioKanap.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+  top: 324px;
+}
+
+.textPortfolio a {
+  color: rgb(231, 109, 27);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 645px) {
+  .interligneTitre--portfolio {
+    width: 100%;
+    flex-direction: column;
+  }
+  .screenPng {
+    min-width: 305px;
+    width: 100%;
+    height: 420px;
+    padding: 0px;
+    margin-bottom: 50px;
+  }
+  .imgPortfolio::after {
+    width: 95%;
+    left: 9px;
+    top: 15px;
+    z-index: -1;
+  }
+  .textPortfolio {
+    width: 96%;
+    left: 9px;
+  }
+  .screenPortfolio {
+    margin-top: 10px;
+  }
+  .screenPortfolioTitle {
+    display: none;
+  }
+  #screenBooky.moove, #screenFood.moove {
+    height: 420px;
+  }
+  #screenPanthere.moove {
+    height: 420px;
+  }
+  #screenKanap.moove {
+    height: 420px;
+  }
+  #screenSauce.moove {
+    height: 420px;
+  }
+  #screenGroupomania.moove {
+    height: 420px;
+  }
+  #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+    top: -3px;
+    border-radius: 5px 5px 0px 0px;
+    transition: transform 0.1s 1.2s, opacity 1.5s;
+    transform: translateY(108%);
+    opacity: 0;
+  }
+  #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+    top: -3px;
+    transform: translateY(-1px);
+    opacity: 1;
+    transition: transform 1.4s, opacity 0.3s 0.4s;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 645px) {
+  .imgPortfolio::after {
+    width: 96%;
+  }
+  .textPortfolio {
+    width: 96%;
+  }
+}
+@media screen and (min-width: 646px) and (max-width: 799px) {
+  .interligneTitre--portfolio {
+    margin-top: 50px !important;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 369px) {
+  .textPortfolio {
+    font-size: 14px !important;
+  }
+  #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+    transition: transform 0.1s 0.2s, opacity 0.4s;
+  }
+  #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+    transition: transform 1.5s, opacity 1s 0.5s;
+  }
+  .screenPng.moove {
+    z-index: 4;
+    position: relative;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 644px) {
+  #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+    transition: transform 2s, opacity 0.6s;
+  }
+  #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+    transition: transform 2, opacity 0.5s 0.9s;
+    top: 0px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 550px) {
+  .imgPortfolio::after {
+    content: "";
+    background-image: url("../../picture/portfolio/BookiPhone.png");
+    background-size: cover;
+  }
+  .imgPortfolio--omyFood::after {
+    content: "";
+    background-image: url("../../picture/portfolio/myfood.png");
+    background-size: cover;
+  }
+  .imgPortfolio--panthere::after {
+    content: "";
+    background-image: url("../../picture/portfolio/pantherePhone.jpg");
+    filter: brightness(1.4);
+  }
+  .imgPortfolio--kanap::after {
+    content: "";
+    background-image: url("../../picture/portfolio/kanap.png");
+  }
+  .imgPortfolio--hotSauce::after {
+    content: "";
+    background-image: url("../../picture/portfolio/hotSaucePhone.jpg");
+    background-size: cover;
+  }
+  .imgPortfolio--Groupomania::after {
+    content: "";
+    background-image: url("../../picture/portfolio/groupomania.png");
+    background-size: cover;
+  }
+}/*# sourceMappingURL=index.css.map */

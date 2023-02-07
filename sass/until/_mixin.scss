@@ -1,0 +1,58 @@
+/**************************************************    Page accueil       ********************************************************/
+
+//Mixin concernant les cadres remplissant la totalité de l'écran
+@mixin fullScreen ($margin : 0px) { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: $margin;
+}
+
+//Mixin pour mettre un bloc au milieu
+@mixin fullFill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+//Mixin pour le texte des cadres en intro
+@mixin formTextIntro { 
+    scale: 1;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(14, 14, 14, 0);
+    box-shadow: 0px 0px 0px 0px rgba(148, 30, 30, 0.3) inset;
+    border: 0px solid blue; //Nous rajoutons cette conditions pour qu'elle ne se répète pas dans les cadres pour cause de doublons qui se supperposent 
+    text-align: center;
+    font-family: 'street_credregular', verdana, arial, helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: $color-pr 1px 0px 10px;
+    opacity: 0;
+}
+
+
+@mixin formTextHome {
+    font-size: 60px;
+    font-family: 'arcregular', verdana, arial, helvetica, sans-serif;
+    text-shadow: $color-pr 1px 0px 10px;
+    background-color: rgba(0,0,0,0);
+    text-transform: uppercase;
+    position: absolute;
+}
+
+
+
+
+/************************************************       Page de présentation        **************************************************************/
+
+@mixin cadreText {
+    margin: 0px 10px 30px 10px;
+    padding: 5px 20px 10px 20px;
+    border-radius: 15px;
+    background: $background-Text ;
+    box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}

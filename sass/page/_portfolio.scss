@@ -1,0 +1,345 @@
+/*********************************************************     Le cadre de visualitation de chaque site   **************************************/
+
+//Gestion de l'ensemble des cards
+.interligneTitre--portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+//Gestion de l'image cadre
+.screenPng {
+    width: 650px;
+    height: 519px;
+    padding: 50px;   
+}
+
+
+
+/*****************************************************   Les titres des cadres      ***********************************************************/
+//Gestion globale des titres
+.screenPortfolioTitle {
+    position: absolute;
+    top: 317px;
+    left: 270px;
+    font-family: 'darmstadt', 'arcregular', verdana, arial, helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+//Omyfood
+.screenPortfolioTitle--myfood {
+    left: 225px;
+}
+
+//La panthère
+.screenPortfolioTitle--panthere {
+    left: 200px;
+}
+
+//Kanap
+.screenPortfolioTitle--kanap {
+    left: 270px;
+}
+
+//hotSauce
+.screenPortfolioTitle--hotSauce {
+    left: 220px;
+}
+
+//Groupomania
+.screenPortfolioTitle--Groupomania {
+    left: 200px;
+}
+
+
+/**************   Les images de chaque site présenté qui sont inclues comme pseudoéléments pour s'emboiter correctement dans les cadres ******/
+//Booki
+.imgPortfolio {
+
+    position: relative;
+
+    &::after {
+        content: "";
+        background-image: url('../../picture/portfolio/Booki.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        display: block;
+        width: 517px;
+        height: 275px;
+        top: 65px;
+        left: 66px;
+        border-radius: 5px 5px 0px 0px;
+        cursor: pointer;
+    }     
+}
+
+
+//Omyfood
+.imgPortfolio--omyFood::after{
+    content: "";
+    background-image: url('../../picture/portfolio/myfood.png');
+    background-size: cover;
+}
+
+//La panthère
+.imgPortfolio--panthere::after {
+    content:"";
+    background-image: url('../../picture/portfolio/panthere.png');
+    background-size: cover;
+}
+
+//Kanap
+.imgPortfolio--kanap::after {
+    content:"";
+    background-image: url('../../picture/portfolio/kanap.png');
+    background-size: cover;
+}
+
+//HotSauce
+.imgPortfolio--hotSauce::after {
+    content:"";
+    background-image: url('../../picture/portfolio/hotSauce.png');
+    background-size: cover;
+}
+
+//Groupomania
+.imgPortfolio--Groupomania::after {
+    content:"";
+    background-image: url('../../picture/portfolio/groupomania.png');
+    background-size: cover;
+}
+
+
+
+/***********************************************      Animation au clic des cardes        ***************************************************************/
+
+//Nous utilisons des id spécifiques pour utiliser la fonction toogle
+#screenBooky, #screenFood, #screenPanthere, #screenKanap, #screenSauce, #screenGroupomania {
+    transition: height $animationDuration;
+}
+
+#screenBooky.moove, #screenFood.moove { height: 830px; }
+#screenPanthere.moove { height: 850px; }
+#screenKanap.moove { height: 780px; }
+#screenSauce.moove { height: 730px; }
+#screenGroupomania.moove { height: 750px; }
+
+
+
+#tittleBooky, #tittleFood, #tittlePanthere, #tittleKanap, #tittleSauce, #tittleGroupomania { transition: top $animationDuration; }
+
+#tittleBooky.moove, #tittleFood.moove { top: 550px }
+#tittlePanthere.moove { top: 570px }
+#tittleKanap.moove { top: 520px }
+#tittleSauce.moove { top: 480px }
+#tittleGroupomania.moove { top: 490px }
+
+
+
+/***********************************************       Gestion du texte au clic       ********************************************************/
+
+//Booky
+.textPortfolio {
+    width: 520px;
+    position: absolute;
+    top: 120px;
+    left: 65px;
+    padding: 20px 10px 20px 10px;
+    background: #121212;
+    color: white;
+    line-height: 22px;
+    text-align: justify;
+}
+
+#textPortfolioBooky, #textPortfolioFood {
+    transition: $transitionTextPortfolio;
+}
+#textPortfolioPanthere {
+    transition: $transitionTextPortfolio;
+    top: 90px;
+}
+#textPortfolioKanap {
+    transition: $transitionTextPortfolio;
+    top: 130px;
+}
+#textPortfolioSauce {
+    transition: $transitionTextPortfolio;
+    top: 180px;
+}
+#textPortfolioGroupomania {
+    transition: $transitionTextPortfolio;
+    top: 160px;
+}
+
+
+#textPortfolioBooky.moove, #textPortfolioFood.moove,#textPortfolioPanthere.moove, #textPortfolioKanap.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+    top: 324px;
+}
+
+//Titre dans le texte
+.textPortfolio a {
+    color: $color-h2;
+    text-decoration: none;
+}
+
+
+
+
+
+@media screen and (min-width: 320px) and (max-width: 645px) {
+
+    //***************************************      Cadres contenant les images       ******************************************************************/
+    .interligneTitre--portfolio {
+       width: 100%;
+       flex-direction: column;
+    }
+
+    .screenPng {
+        min-width: 305px;
+        width: 100%;
+        height: 420px;
+        padding: 0px;
+        margin-bottom: 50px;
+    }
+    
+    .imgPortfolio::after {
+        width: 95%;
+        left: 9px;
+        top: 15px;
+        z-index: -1;
+    }
+
+    .textPortfolio {
+        width: 96%;
+        left: 9px;
+    }
+
+    .screenPortfolio { margin-top: 10px; }
+
+    .screenPortfolioTitle {
+        display: none;
+    }
+
+    //Partie des cadres
+    #screenBooky.moove, #screenFood.moove { height: 420px; }
+    #screenPanthere.moove { height: 420px; }
+    #screenKanap.moove { height: 420px; }
+    #screenSauce.moove { height: 420px; }
+    #screenGroupomania.moove { height: 420px; }
+
+
+    //Partie du texte dans les cadres, en résolution téléphone nous empêchons le texte de se mouvoir
+    #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+         top: -3px; 
+         border-radius: 5px 5px 0px 0px;
+         transition: transform 0.1s 1.2s, opacity 1.5s;
+         transform: translateY(108%);
+         opacity: 0;
+         }
+
+    #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+        top: -3px;
+        transform: translateY(-1px);
+        opacity: 1;
+        transition: transform 1.4s, opacity 0.3s 0.4s;  
+    }
+            
+}
+
+
+//Nous ajustons correctement l'image des cardes ainsi que le titre
+@media screen and (min-width: 500px) and (max-width: 645px) {
+
+    .imgPortfolio::after { width: 96%; }
+
+    .textPortfolio { width: 96%;}
+}
+
+
+//Nous ajustons la hauteur des cardes en moyenne résolution
+@media screen and (min-width: 646px) and (max-width: 799px) {
+    .interligneTitre--portfolio {
+        margin-top: 50px!important;
+    }
+}
+
+//Nous définissions une police plus petite pour une très petite résolution
+@media screen and (min-width: 320px) and (max-width: 369px) {
+    .textPortfolio { font-size: 14px!important; }
+
+    #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+        transition: transform 0.1s 0.2s, opacity 0.4s ;
+        }
+
+   #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+        transition: transform 1.5s, opacity 1s 0.5s; 
+   }
+
+    .screenPng.moove {
+        z-index: 4;
+        position: relative;
+    }
+
+}
+
+//Correction des animations du texte au clic lors de petites résolutions
+@media screen and (min-width: 550px) and (max-width: 644px) {
+    #textPortfolioBooky, #textPortfolioFood, #textPortfolioKanap, #textPortfolioPanthere, #textPortfolioSauce, #textPortfolioGroupomania {
+        transition: transform 2s, opacity 0.6s;
+        }
+
+   #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioKanap.moove, #textPortfolioPanthere.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
+       transition: transform 2, opacity 0.5s 0.9s; 
+       top: 0px;
+   }
+}
+
+
+//Gestion de certaines images de fond en petite résolution 
+@media screen and (min-width: 320px) and (max-width: 550px) {
+    .imgPortfolio::after {
+        content: "";
+        background-image: url('../../picture/portfolio/BookiPhone.png');
+        background-size: cover;
+    }
+
+    //Omyfood
+    .imgPortfolio--omyFood::after{
+        content: "";
+        background-image: url('../../picture/portfolio/myfood.png');
+        background-size: cover;
+    }
+
+    //La panthère
+    .imgPortfolio--panthere::after {
+        content:"";
+        background-image: url('../../picture/portfolio/pantherePhone.jpg');
+        filter: brightness(1.4);
+    }
+
+    //Kanap
+    .imgPortfolio--kanap::after {
+        content:"";
+        background-image: url('../../picture/portfolio/kanap.png');
+    }
+
+    //HotSauce
+    .imgPortfolio--hotSauce::after {
+        content:"";
+        background-image: url('../../picture/portfolio/hotSaucePhone.jpg');
+        background-size: cover;
+    }
+
+    //Groupomania
+    .imgPortfolio--Groupomania::after {
+        content:"";
+        background-image: url('../../picture/portfolio/groupomania.png');
+        background-size: cover;
+    }
+}
+
+
+

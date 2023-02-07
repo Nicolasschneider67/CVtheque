@@ -1,0 +1,149 @@
+//Paramètres généraux de la barre de navigation
+.navbar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    right: 0px;
+    top: 10px;
+    border-radius: 10px;
+    background-color: #090708;
+
+    .navbarIcon {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+
+
+/***********************************************************  Gestion individuelles des icones     **************************************************/
+.fa-user-tie, .fa-comments, .fa-graduation-cap {
+    font-size: 40px;
+    color: $color-pr;
+    padding: 10px 10px 10px 5px;
+    &:hover {
+        color: white;
+    } 
+}
+
+.navbarLogo {
+    width: 50px;
+    padding-top: 10px;
+}
+
+
+
+/**********************************************************    Bulle de contact    ***************************************************************/
+
+//Nous enlevons les dimensions de la bulle pour ne pas impacter la navbar
+#commentBubble {
+    position: relative;
+    right: 220px;
+    bottom: 10px;
+    width: 0px;
+    height: 0px;
+}
+
+#pictCommentBubble {
+    width: 310px;
+    height: 150px;
+    color: $color-pr;
+}
+
+.textCommentBubble {
+    position: absolute;
+    white-space: nowrap;
+    text-align: start;
+    top: 40px;
+    left: 20px;
+    color: white;
+}
+
+
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+
+//Nous déplaçons la nav bar en haut lors de petites résolutions
+@media screen and (min-width: 320px) and (max-width: 800px) {
+
+    .navbar { 
+        flex-direction: row;
+        width: 310px; 
+        left: 50%; 
+        margin-left: -155px;
+    }
+
+    .navbarIcon {
+        flex-direction: row!important;
+    }
+
+    .navbarLogo { 
+        width: 70px;
+        padding: 5px; 
+        padding-left: 10px;
+    }
+    .fa-user-tie, .fa-comments, .fa-graduation-cap { 
+        font-size: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+ }
+
+}
+
+
+/***********************************************    Paramètres de la navbar à la page Portfolio     ******************************************/
+.navbarPortfolio {
+    @extend .navbar;
+    top: 25%;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 8px 1px white;
+
+    .navbarLogoPortfolio{
+        @extend .navbarLogo;
+        width: 55px;
+        margin-bottom: 20px;
+    }
+
+    #contactPortfolio { font-size: 40px; }
+}
+
+
+
+
+
+/***********************************************        Résolution téléphone        ******************************************************************/
+
+@media screen and (min-width: 320px) and (max-width: 800px) {
+    .navbarPortfolio {
+        display: flex;
+        justify-content: space-evenly;
+        height: 76px;
+        width: 200px;
+        margin-left: -100px;
+        top: 5%;
+    }
+
+    .navbarLogoPortfolio { 
+        width: 70px!important;
+        margin-top: -15px;
+    }
+
+    #contactPortfolio { 
+        font-size: 47px!important;
+        margin-top: -15px;
+    }
+
+    .navbarPortfolio .textCommentBubble {
+        margin-left: 50px;
+    }
+
+    .navbarPortfolio #pictCommentBubble { margin-left: 50px; }
+}
+
+@media screen and (min-width: 646px) and (max-width: 799px){
+
+    .navbarPortfolio { top: 10%; }
+}
