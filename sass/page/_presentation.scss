@@ -107,6 +107,39 @@
 }
 
 
+/*********************************    Juxtaposition de l'animation des compétences web avec le texte     ***************************/
+
+//Nous laissons le texte en bas comme en résolution téléphone
+@media screen and (min-width: 769px) and (max-width: 1039px) {
+
+.TextDegrees .TextDegrees1 {
+    position: static;
+    margin: 110px 0px 90px;
+    }
+}
+
+/*****************************************************************************************************************************************/
+//Nous remontons la 2ème partie du texte sous les icônes
+@media screen and (min-width: 1039px) and (max-width: 1200px) {
+    .TextDegrees2 { margin-top: -250px }
+}
+@media screen and (min-width: 1201px) and (max-width: 1300px) {
+    .TextDegrees2 { margin-top: -200px }
+}
+/******************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+
+
+
+/**********************************************    Amélioration des marges à haute résolution      *********************************/
+
+@media screen and (min-width: 800px) {
+
+    .textPresentation { margin: 0px 75px 30px; }
+
+    .textPresentation h2:after { left: 104px; }
+}
+
 
 /*****************************************************      Résolution téléphone       ***************************************************/
 
@@ -116,14 +149,6 @@
     .textPresentation { margin: 0px; }
     .textPresentation h2 { margin-top: 20px; }
     .interligneTitre { margin-top: 80px!important; }
-
-    //Gros titres
-    .baseText h1 {
-        font-size: 40px;
-        margin-top: -75px!important;
-        margin-bottom: 40px!important;
-        line-height: 32px;
-      }
 
     .textPresentation { margin-bottom: 150px;}
 
@@ -161,10 +186,7 @@
 
      .liDegrees p { padding-left: 0px; }
 
-     .myDegrees {
-        margin-bottom: 60px; 
-        margin-top: 100px;
-    }
+     .myDegrees { margin-bottom: 60px; }
 
      .myDegrees ul { 
         padding-left: 0px;

@@ -12,6 +12,7 @@
     width: 650px;
     height: 519px;
     padding: 50px;   
+    filter: drop-shadow(0px 0px 5px white);
 }
 
 
@@ -62,7 +63,7 @@
 
     &::after {
         content: "";
-        background-image: url('../../picture/portfolio/Booki.png');
+        background-image: url('../picture/portfolio/Booki.png');
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -80,35 +81,35 @@
 //Omyfood
 .imgPortfolio--omyFood::after{
     content: "";
-    background-image: url('../../picture/portfolio/myfood.png');
+    background-image: url('../picture/portfolio/myfood.png');
     background-size: cover;
 }
 
 //La panthère
 .imgPortfolio--panthere::after {
     content:"";
-    background-image: url('../../picture/portfolio/panthere.png');
+    background-image: url('../picture/portfolio/panthere.png');
     background-size: cover;
 }
 
 //Kanap
 .imgPortfolio--kanap::after {
     content:"";
-    background-image: url('../../picture/portfolio/kanap.png');
+    background-image: url('../picture/portfolio/kanap.png');
     background-size: cover;
 }
 
 //HotSauce
 .imgPortfolio--hotSauce::after {
     content:"";
-    background-image: url('../../picture/portfolio/hotSauce.png');
+    background-image: url('../picture/portfolio/hotSauce.png');
     background-size: cover;
 }
 
 //Groupomania
 .imgPortfolio--Groupomania::after {
     content:"";
-    background-image: url('../../picture/portfolio/groupomania.png');
+    background-image: url('../picture/portfolio/groupomania.png');
     background-size: cover;
 }
 
@@ -118,20 +119,21 @@
 
 //Nous utilisons des id spécifiques pour utiliser la fonction toogle
 #screenBooky, #screenFood, #screenPanthere, #screenKanap, #screenSauce, #screenGroupomania {
-    transition: height $animationDuration;
+    transition: height $animationDuration, filter $animationDuration;
+
 }
 
-#screenBooky.moove, #screenFood.moove { height: 830px; }
-#screenPanthere.moove { height: 850px; }
-#screenKanap.moove { height: 780px; }
-#screenSauce.moove { height: 730px; }
-#screenGroupomania.moove { height: 750px; }
+#screenBooky.moove, #screenFood.moove { height: 830px; filter: $colorPortfolioSelect;}
+#screenPanthere.moove { height: 850px; filter: $colorPortfolioSelect; }
+#screenKanap.moove { height: 780px; filter: $colorPortfolioSelect; }
+#screenSauce.moove { height: 730px; filter: $colorPortfolioSelect; }
+#screenGroupomania.moove { height: 750px; filter: $colorPortfolioSelect; }
 
 
 
 #tittleBooky, #tittleFood, #tittlePanthere, #tittleKanap, #tittleSauce, #tittleGroupomania { transition: top $animationDuration; }
 
-#tittleBooky.moove, #tittleFood.moove { top: 550px }
+#tittleBooky.moove, #tittleFood.moove { top: 550px; }
 #tittlePanthere.moove { top: 570px }
 #tittleKanap.moove { top: 520px }
 #tittleSauce.moove { top: 480px }
@@ -302,41 +304,41 @@
 @media screen and (min-width: 320px) and (max-width: 550px) {
     .imgPortfolio::after {
         content: "";
-        background-image: url('../../picture/portfolio/BookiPhone.png');
+        background-image: url('../picture/portfolio/BookiPhone.png');
         background-size: cover;
     }
 
     //Omyfood
     .imgPortfolio--omyFood::after{
         content: "";
-        background-image: url('../../picture/portfolio/myfood.png');
+        background-image: url('../picture/portfolio/myfood.png');
         background-size: cover;
     }
 
     //La panthère
     .imgPortfolio--panthere::after {
         content:"";
-        background-image: url('../../picture/portfolio/pantherePhone.jpg');
+        background-image: url('../picture/portfolio/pantherePhone.jpg');
         filter: brightness(1.4);
     }
 
     //Kanap
     .imgPortfolio--kanap::after {
         content:"";
-        background-image: url('../../picture/portfolio/kanap.png');
+        background-image: url('../picture/portfolio/kanap.png');
     }
 
     //HotSauce
     .imgPortfolio--hotSauce::after {
         content:"";
-        background-image: url('../../picture/portfolio/hotSaucePhone.jpg');
+        background-image: url('../picture/portfolio/hotSaucePhone.jpg');
         background-size: cover;
     }
 
     //Groupomania
     .imgPortfolio--Groupomania::after {
         content:"";
-        background-image: url('../../picture/portfolio/groupomania.png');
+        background-image: url('../picture/portfolio/groupomania.png');
         background-size: cover;
     }
 }

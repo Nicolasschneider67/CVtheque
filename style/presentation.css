@@ -1,0 +1,783 @@
+@charset "UTF-8";
+/**************************************************    Page accueil       ********************************************************/
+/************************************************       Page de présentation        **************************************************************/
+/******************************************  Animation à l'entrée du site  ********************************************************/
+@keyframes pictureIntro {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes PopUp {
+  0% {
+    scale: 0;
+  }
+  8% {
+    scale: 1;
+  }
+  90% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/****************************************  Animation en page de présentation    *************************************************/
+@keyframes borderAnimate {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: rgb(39, 201, 216);
+    border-right-color: rgb(39, 201, 216);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+@keyframes borderAnimate2 {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  50% {
+    width: 0%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgb(39, 201, 216);
+  }
+}
+/***************************************************         Header       ********************************************************/
+@keyframes pulseHeader {
+  from {
+    box-shadow: 0 0 0 0 rgba(3, 149, 229, 0.4);
+  }
+  to {
+    box-shadow: 0 0 0 45px rgba(3, 149, 229, 0);
+  }
+}
+/*site ou je l'ai trouvé https://web-eau.net/blog/15-animations-css-vraiment-bluffantes*/
+/*Définition des paramètres généraux*/
+/*Positionnement de l'animation*/
+.animation--principale::before, .animation--principale::after, .animation--principale {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/***************************************************    Cadre       **************************************************************************/
+.animation--principale {
+  z-index: 3;
+  transform: rotate(45deg);
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  color: rgb(39, 201, 216);
+  border: 2px solid rgb(39, 201, 216);
+  box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}
+.animation--principale::before, .animation--principale::after {
+  content: "";
+  margin: -5%;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 7s linear infinite;
+}
+.animation--principale::before {
+  animation-delay: -3.5s;
+}
+
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
+}
+/********************************************         Image dans le cadre        **************************************************************/
+.animation__picture {
+  position: absolute;
+  top: 39px;
+  left: 40px;
+  width: 130px;
+  transform: rotate(-45deg);
+}
+
+/************************************************  Partie des icônes dans les qualification & compétences   *********************************/
+.myDegrees--skill {
+  animation: iconeRotate 9s linear infinite;
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 90px;
+  margin-right: 50px;
+}
+.myDegrees--skill .skillICone {
+  animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 7.9s;
+  position: absolute;
+  width: 80px;
+  top: -40px;
+  left: 140px;
+}
+.myDegrees--skill .skillICone--css {
+  animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 6.3s;
+  top: 80px;
+  left: 270px;
+}
+.myDegrees--skill .skillICone--saas {
+  animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 4.4s;
+  width: 100px;
+  left: 160px;
+  top: 240px;
+}
+.myDegrees--skill .skillICone--js {
+  animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 1s;
+  width: 70px;
+  left: -15px;
+  top: 55px;
+}
+.myDegrees--skill .skillICone--react {
+  animation: iconeRotateInver 9s linear infinite, scaleIcone 9s linear infinite 2.7s;
+  left: 0px;
+  top: 220px;
+}
+
+@keyframes iconeRotate {
+  0% {
+    rotate: -360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@keyframes iconeRotateInver {
+  0% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@keyframes scaleIcone {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.5;
+  }
+  20% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1039px) {
+  .myDegrees--skill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .myDegrees--skill {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .myDegrees--skill .skillICone {
+    width: 70px;
+    top: -60px;
+    left: 50px;
+  }
+  .myDegrees--skill .skillICone--css {
+    top: 0px;
+    left: 140px;
+  }
+  .myDegrees--skill .skillICone--js {
+    left: -55px;
+    top: -10px;
+    width: 60px;
+  }
+  .myDegrees--skill .skillICone--react {
+    left: -30px;
+    top: 100px;
+  }
+  .myDegrees--skill .skillICone--saas {
+    width: 90px !important;
+    left: 85px;
+    top: 90px;
+  }
+}
+.cardHeader {
+  background: #090708;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: -7px;
+  box-shadow: 0px 8px 18px white;
+}
+
+.presentationHeader--accueil {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 30px;
+}
+
+/********************************************************    Animation des cadres au survol      ***************************************/
+.presentationHeader {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-family: "street_credregular", verdana, arial, helvetica, sans-serif;
+}
+.presentationHeader:before {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  top: -2px;
+  left: -2px;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+.presentationHeader:after {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  top: -2px;
+  left: -2px;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+.presentationHeader a {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+}
+
+.presentationHeader:hover a {
+  transition: 1s;
+  color: rgb(39, 201, 216);
+}
+
+.presentationHeader:hover:before {
+  animation: borderAnimate 1s linear forwards;
+}
+
+.presentationHeader:hover:after {
+  animation: borderAnimate2 1s linear forwards;
+}
+
+/********************************************        Résolution téléphone        *********************************************************************/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+  .presentationHeader {
+    display: none;
+  }
+  .presentationHeader--accueil {
+    display: flex;
+    width: 100%;
+  }
+  .logoHeader {
+    margin: -10px auto 20px auto;
+    width: 90px;
+  }
+  .presentationHeader:hover:before {
+    animation: none;
+  }
+  .presentationHeader:hover:after {
+    animation: none;
+  }
+}
+/********************************************        Résolution grand téléphone / tablette        *********************************************************************/
+@media screen and (min-width: 481px) and (max-width: 645px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+  .presentationHeader {
+    font-size: 40px !important;
+  }
+  .presentationHeader:hover:before, .presentationHeader:hover:after {
+    animation: none;
+  }
+  .logoHeader {
+    display: none;
+  }
+  .cardHeader {
+    padding: 0px 20px 0px 20px;
+  }
+}
+@media screen and (min-width: 645px) and (max-width: 1100px) {
+  .presentationHeader--accueil {
+    display: none;
+  }
+}
+@media screen and (min-width: 646px) and (max-width: 800px) {
+  .cardHeader {
+    position: relative;
+    z-index: 5;
+  }
+}
+.navbar, .navbarPortfolio {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  right: 0px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: #090708;
+  box-shadow: 0px 0px 7px 2px white;
+}
+.navbar .navbarIcon, .navbarPortfolio .navbarIcon {
+  display: flex;
+  flex-direction: column;
+}
+
+/***********************************************************  Gestion individuelles des icones     **************************************************/
+.fa-user-tie, .fa-comments, .fa-graduation-cap {
+  font-size: 40px;
+  color: rgb(39, 201, 216);
+  padding: 10px 10px 10px 5px;
+}
+.fa-user-tie:hover, .fa-comments:hover, .fa-graduation-cap:hover {
+  color: white;
+}
+
+.navbarLogo, .navbarPortfolio .navbarLogoPortfolio {
+  width: 50px;
+  padding-top: 10px;
+}
+
+/**********************************************************    Bulle de contact    ***************************************************************/
+#commentBubble {
+  position: relative;
+  right: 220px;
+  bottom: 10px;
+  width: 0px;
+  height: 0px;
+}
+
+#pictCommentBubble {
+  width: 310px;
+  height: 150px;
+  color: rgb(39, 201, 216);
+}
+
+.textCommentBubble {
+  position: absolute;
+  white-space: nowrap;
+  text-align: start;
+  top: 40px;
+  left: 20px;
+  color: white;
+}
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .navbar, .navbarPortfolio {
+    flex-direction: row;
+    width: 310px;
+    left: 50%;
+    margin-left: -155px;
+  }
+  .navbarIcon {
+    flex-direction: row !important;
+  }
+  .navbarLogo, .navbarPortfolio .navbarLogoPortfolio {
+    width: 70px;
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .fa-user-tie, .fa-comments, .fa-graduation-cap {
+    font-size: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/***********************************************    Paramètres de la navbar à la page Portfolio     ******************************************/
+.navbarPortfolio {
+  top: 25%;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 8px 1px white;
+}
+.navbarPortfolio .navbarLogoPortfolio {
+  width: 55px;
+  margin-bottom: 20px;
+}
+.navbarPortfolio #contactPortfolio {
+  font-size: 40px;
+}
+
+/***********************************************        Résolution téléphone        ******************************************************************/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .navbarPortfolio {
+    display: flex;
+    justify-content: space-evenly;
+    height: 76px;
+    width: 200px;
+    margin-left: -100px;
+    top: 5%;
+  }
+  .navbarLogoPortfolio {
+    width: 70px !important;
+    margin-top: -15px;
+  }
+  #contactPortfolio {
+    font-size: 47px !important;
+    margin-top: -15px;
+  }
+  .navbarPortfolio .textCommentBubble {
+    margin-left: 50px;
+  }
+  .navbarPortfolio #pictCommentBubble {
+    margin-left: 50px;
+  }
+}
+@media screen and (min-width: 646px) and (max-width: 799px) {
+  .navbarPortfolio {
+    top: 10%;
+  }
+}
+/******************************************************     Polices     *************************************************************************/
+@font-face {
+  font-family: "street_credregular";
+  src: url("../../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../../font/street-creed/street_cred-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "arcregular";
+  src: url("../../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../../font/arc/arc_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "aukim";
+  src: url("../../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../../font/aukim/aukimcondensed-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "darmstadt";
+  src: url("../../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*******************************************************                ****************************************************************************/
+/************************************************************  Paramètres généraux  *****************************************************/
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+h1 {
+  color: white;
+}
+
+.BackgroundPict {
+  background-image: url("../../picture/circuit_imprime.jpg");
+}
+
+/**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
+.baseText h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px -8px 60px -8px;
+  background: rgba(15, 15, 15, 0.9254901961);
+  font-family: "arcregular", verdana, arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: rgb(39, 201, 216) 1px 0px 10px;
+}
+
+.baseText h2 {
+  font-size: 32px;
+  color: rgb(231, 109, 27);
+  margin-bottom: 30px;
+}
+
+.baseText p {
+  font-family: "aukim", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 30px;
+}
+
+ul {
+  font-family: "aukim", verdana, arial, helvetica, sans-serif;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.interligneTitre {
+  margin-top: 90px;
+}
+
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .baseText h2 {
+    margin-top: 50px;
+  }
+  .baseText h1 {
+    font-size: 40px;
+    margin-top: -75px;
+    margin-bottom: 40px;
+    line-height: 32px;
+  }
+}
+/*********************************************     Partie globale   ****************************************************************/
+.whoIAm {
+  margin-top: 140px;
+  margin-bottom: 100px;
+}
+
+.textPresentation {
+  margin: 0px 10px 30px 10px;
+  padding: 5px 20px 10px 20px;
+  border-radius: 15px;
+  background: rgba(15, 15, 15, 0.9254901961);
+  box-shadow: -1px 2px 15px 3px rgba(39, 201, 216, 0.7) inset;
+}
+.textPresentation h2:after {
+  content: "";
+  position: absolute;
+  left: 39px;
+  width: 250px;
+  height: 3px;
+  margin-top: 39px;
+  background: linear-gradient(to right, rgb(231, 109, 27) 100px, rgb(39, 201, 216));
+}
+
+/*********************************************        Partie activité   *************************************************************/
+.activities {
+  margin: 50px 50px 0px 50px;
+}
+.activities .activitiesCard {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.activitiesCard p {
+  margin-top: -7px;
+  font-size: 16px;
+}
+
+.activitiesCard--hike p {
+  margin-top: 5px;
+}
+
+/*******************************************************     Icones         ********************************************************************/
+#guitar, #plane, #hike {
+  color: white;
+  font-size: 50px;
+  margin-right: 20px;
+}
+
+#plane {
+  font-size: 41px;
+}
+
+#hike {
+  margin-right: 20px;
+}
+
+/*****************************************************     Partie des diplômes      ************************************************************/
+.liDegrees {
+  display: flex;
+  margin-bottom: 70px;
+}
+.liDegrees li {
+  width: 500px;
+  text-align: start;
+}
+.liDegrees p {
+  font-size: 15px;
+  padding-left: 50px;
+  margin-top: 0px;
+}
+
+.liDegrees--commerce li {
+  width: 600px;
+}
+
+.liDegrees--web li {
+  width: 650px;
+}
+
+/*******************************************  La partie des icones se trouve dans le dossier components   **************************************/
+/************************************************************************************************************************************************/
+/**********************************************       Partie des compétences en développement web   **********************************************/
+.TextDegrees1 {
+  position: relative;
+  bottom: 320px;
+  margin-left: 500px;
+}
+
+.TextDegrees2 {
+  margin-top: -55px;
+}
+
+/*********************************    Juxtaposition de l'animation des compétences web avec le texte     ***************************/
+@media screen and (min-width: 769px) and (max-width: 1039px) {
+  .TextDegrees .TextDegrees1 {
+    position: static;
+    margin: 110px 0px 90px;
+  }
+}
+/*****************************************************************************************************************************************/
+@media screen and (min-width: 1039px) and (max-width: 1200px) {
+  .TextDegrees2 {
+    margin-top: -250px;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1300px) {
+  .TextDegrees2 {
+    margin-top: -200px;
+  }
+}
+/******************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/**********************************************    Amélioration des marges à haute résolution      *********************************/
+@media screen and (min-width: 800px) {
+  .textPresentation {
+    margin: 0px 75px 30px;
+  }
+  .textPresentation h2:after {
+    left: 104px;
+  }
+}
+/*****************************************************      Résolution téléphone       ***************************************************/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .textPresentation {
+    margin: 0px;
+  }
+  .textPresentation h2 {
+    margin-top: 20px;
+  }
+  .interligneTitre {
+    margin-top: 80px !important;
+  }
+  .textPresentation {
+    margin-bottom: 150px;
+  }
+  .textPresentation h2:after {
+    left: 30px;
+    margin-top: 40px;
+  }
+  .activities {
+    margin: 40px 0px 10px 0px;
+  }
+  .titlePresentation {
+    margin: 0px 0px 20px 0px !important;
+    line-height: 50px !important;
+  }
+  .liDegrees {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+  .liDegrees li {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: rgb(39, 201, 216);
+    font-weight: bold;
+  }
+  .liDegrees p {
+    padding-left: 0px;
+  }
+  .myDegrees {
+    margin-bottom: 60px;
+  }
+  .myDegrees ul {
+    padding-left: 0px;
+    list-style: none;
+  }
+  .TextDegrees {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+  .TextDegrees .TextDegrees1 {
+    position: static;
+    margin: 0px;
+    margin-bottom: 90px;
+  }
+}/*# sourceMappingURL=presentation.css.map */

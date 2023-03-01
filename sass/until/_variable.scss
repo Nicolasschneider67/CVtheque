@@ -3,6 +3,9 @@ $color-pr: rgb(39, 201, 216);
 $color-h2: rgb(231, 109, 27);
 $color-text: white;
 
+//Gestion de la couleur de l'ombre dans portfolio
+$colorPortfolioSelect: drop-shadow(1px 3px 6px $color-pr);
+
 //Gestion de la couleur de fond des paragraphes
 $background-Text : #0f0f0fec;
 
