@@ -428,7 +428,7 @@
 #pictCommentBubble {
   width: 310px;
   height: 150px;
-  color: rgb(39, 201, 216);
+  filter: drop-shadow(2px 4px 6px rgb(39, 201, 216));
 }
 
 .textCommentBubble {
