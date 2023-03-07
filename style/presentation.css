@@ -357,6 +357,9 @@
 }
 /********************************************        Résolution grand téléphone / tablette        *********************************************************************/
 @media screen and (min-width: 481px) and (max-width: 645px) {
+  .whoIAm {
+    margin-top: 80px;
+  }
   .cardHeader {
     position: relative;
     z-index: 5;
@@ -428,7 +431,7 @@
 #pictCommentBubble {
   width: 310px;
   height: 150px;
-  color: rgb(39, 201, 216);
+  filter: drop-shadow(2px 4px 6px rgb(39, 201, 216));
 }
 
 .textCommentBubble {
@@ -514,25 +517,25 @@
 /******************************************************     Polices     *************************************************************************/
 @font-face {
   font-family: "street_credregular";
-  src: url("../../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../../font/street-creed/street_cred-webfont.woff") format("woff");
+  src: url("../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../font/street-creed/street_cred-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "arcregular";
-  src: url("../../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../../font/arc/arc_regular-webfont.woff") format("woff");
+  src: url("../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../font/arc/arc_regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "aukim";
-  src: url("../../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../../font/aukim/aukimcondensed-webfont.woff") format("woff");
+  src: url("../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../font/aukim/aukimcondensed-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "darmstadt";
-  src: url("../../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
+  src: url("../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -549,7 +552,7 @@ h1 {
 }
 
 .BackgroundPict {
-  background-image: url("../../picture/circuit_imprime.jpg");
+  background-image: url("../picture/circuit_imprime.jpg");
 }
 
 /**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
