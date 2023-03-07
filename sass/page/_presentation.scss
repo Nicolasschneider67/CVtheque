@@ -150,7 +150,7 @@
     .textPresentation h2 { margin-top: 20px; }
     .interligneTitre { margin-top: 80px!important; }
 
-    .textPresentation { margin-bottom: 150px;}
+    .textPresentation { margin-bottom: 100px; }
 
     //Barre de soulignement sous les titres
     .textPresentation h2:after {
@@ -158,6 +158,11 @@
         margin-top: 40px;
     }
 
+    //Titre des compétences développées
+    .skillTittle { margin-bottom: 120px!important; }
+
+    //Partie présentation
+    .whoIAm { margin-top: 40px; }
 
     //Partie activités
     .activities { margin: 40px 0px 10px 0px;}

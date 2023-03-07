@@ -439,6 +439,9 @@
   left: 20px;
   color: white;
 }
+.textCommentBubble p {
+  margin-bottom: 0px !important;
+}
 
 /*****************************************************      Résolution téléphone       ***************************************************/
 @media screen and (min-width: 320px) and (max-width: 800px) {
@@ -734,10 +737,16 @@ ul {
     margin-top: 80px !important;
   }
   .textPresentation {
-    margin-bottom: 150px;
+    margin-bottom: 100px;
   }
   .textPresentation h2:after {
     left: 30px;
+    margin-top: 40px;
+  }
+  .skillTittle {
+    margin-bottom: 120px !important;
+  }
+  .whoIAm {
     margin-top: 40px;
   }
   .activities {
