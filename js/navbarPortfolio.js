@@ -12,7 +12,7 @@ icone.addEventListener("click", () => {
 /*************************************       Effet d'apparition de la navbar au scroll     *************************************************/
 // Nous souhaitons que la navbar est un effet d'apparition en résolution téléphone, en grande résolution elle doit tout le temps être présente
 const scrollNavbar = document.querySelector(".navbarPortfolio");
-scrollNavbar.style.display = "flex";
+scrollNavbar.style.display = "none";
 
 //Nous écountons un évènement au scroll
 window.addEventListener("scroll", () => {
