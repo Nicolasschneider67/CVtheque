@@ -3,8 +3,8 @@
 //Police pour l'écran d'introduction
 @font-face {
   font-family: 'street_credregular';
-  src: url('../../font/street-creed/street_cred-webfont.woff2') format('woff2'),
-       url('../../font/street-creed/street_cred-webfont.woff') format('woff');
+  src: url('../font/street-creed/street_cred-webfont.woff2') format('woff2'),
+       url('../font/street-creed/street_cred-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,8 +12,8 @@
 //Police pour la page d'accueil
 @font-face {
   font-family: 'arcregular';
-  src: url('../../font/arc/arc_regular-webfont.woff2') format('woff2'),
-       url('../../font/arc/arc_regular-webfont.woff') format('woff');
+  src: url('../font/arc/arc_regular-webfont.woff2') format('woff2'),
+       url('../font/arc/arc_regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -21,8 +21,8 @@
 //Police de texte
 @font-face {
   font-family: 'aukim';
-  src: url('../../font/aukim/aukimcondensed-webfont.woff2') format('woff2'),
-       url('../../font/aukim/aukimcondensed-webfont.woff') format('woff');
+  src: url('../font/aukim/aukimcondensed-webfont.woff2') format('woff2'),
+       url('../font/aukim/aukimcondensed-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,8 +30,8 @@
 //Police pour les cadres du portfolio
 @font-face {
   font-family: 'darmstadt';
-  src: url('../../font/darmstadt/darmstadt_arts-webfont.woff2') format('woff2'),
-       url('../../font/darmstadt/darmstadt_arts-webfont.woff') format('woff');
+  src: url('../font/darmstadt/darmstadt_arts-webfont.woff2') format('woff2'),
+       url('../font/darmstadt/darmstadt_arts-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -53,7 +53,7 @@ h1 {
 }
 
 //Fond d'écran pour les pages présentations et portfolio
-.BackgroundPict { background-image: url("../../picture/circuit_imprime.jpg");}
+.BackgroundPict { background-image: url("../picture/circuit_imprime.jpg");}
 
 /**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
 //Nous créons ces condition pour que le texte en page d'accueil ne soit pas impacté
