@@ -5,8 +5,7 @@ let bubble = document.getElementById("commentBubble");
 bubble.style.display = "none"; //Il faut déclarer le style display en JS pour ne pas avoir à devoir cliquer 2 fois sur l'icone
 
 icone.addEventListener("click", () => {
-    if (bubble.style.display == "none") {bubble.style.display = "block"}
-        else {bubble.style.display = "none"};
+    alert("Mail: nicolas.schneider@hotmail.fr / Téléphone: 06 20 41 50 44")
 });
 
 
