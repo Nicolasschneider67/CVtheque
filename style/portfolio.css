@@ -490,6 +490,7 @@
     width: 200px;
     margin-left: -100px;
     top: 5%;
+    z-index: 5;
   }
   .navbarLogoPortfolio {
     width: 70px !important;
