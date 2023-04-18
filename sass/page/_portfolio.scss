@@ -74,6 +74,7 @@
         left: 66px;
         border-radius: 5px 5px 0px 0px;
         cursor: pointer;
+        z-index: 6;
     }     
 }
 
@@ -157,7 +158,7 @@
 }
 
 #textPortfolioBooky, #textPortfolioFood {
-    transition: $transitionTextPortfolio;
+    transition: $transitionTextPortfolio;  
 }
 #textPortfolioPanthere {
     transition: $transitionTextPortfolio;
@@ -179,6 +180,7 @@
 
 #textPortfolioBooky.moove, #textPortfolioFood.moove,#textPortfolioPanthere.moove, #textPortfolioKanap.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
     top: 324px;
+    z-index: 5;
 }
 
 //Titre dans le texte
@@ -211,7 +213,6 @@
         width: 95%;
         left: 9px;
         top: 15px;
-        z-index: -1;
     }
 
     .textPortfolio {
@@ -255,7 +256,7 @@
 //Nous ajustons correctement l'image des cardes ainsi que le titre
 @media screen and (min-width: 500px) and (max-width: 645px) {
 
-    .imgPortfolio::after { width: 96%; }
+    .imgPortfolio::after { width: 96%; z-index: -1; }
 
     .textPortfolio { width: 96%;}
 }

@@ -428,7 +428,7 @@
 #pictCommentBubble {
   width: 310px;
   height: 150px;
-  filter: drop-shadow(2px 4px 6px rgb(39, 201, 216));
+  color: rgb(39, 201, 216);
 }
 
 .textCommentBubble {
@@ -514,25 +514,25 @@
 /******************************************************     Polices     *************************************************************************/
 @font-face {
   font-family: "street_credregular";
-  src: url("../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../font/street-creed/street_cred-webfont.woff") format("woff");
+  src: url("../../font/street-creed/street_cred-webfont.woff2") format("woff2"), url("../../font/street-creed/street_cred-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "arcregular";
-  src: url("../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../font/arc/arc_regular-webfont.woff") format("woff");
+  src: url("../../font/arc/arc_regular-webfont.woff2") format("woff2"), url("../../font/arc/arc_regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "aukim";
-  src: url("../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../font/aukim/aukimcondensed-webfont.woff") format("woff");
+  src: url("../../font/aukim/aukimcondensed-webfont.woff2") format("woff2"), url("../../font/aukim/aukimcondensed-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "darmstadt";
-  src: url("../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
+  src: url("../../font/darmstadt/darmstadt_arts-webfont.woff2") format("woff2"), url("../../font/darmstadt/darmstadt_arts-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -549,7 +549,7 @@ h1 {
 }
 
 .BackgroundPict {
-  background-image: url("../picture/circuit_imprime.jpg");
+  background-image: url("../../picture/circuit_imprime.jpg");
 }
 
 /**************************************************   Paramètres généraux pour la page de présentation      *****************************************/
@@ -666,6 +666,7 @@ ul {
   left: 66px;
   border-radius: 5px 5px 0px 0px;
   cursor: pointer;
+  z-index: 6;
 }
 
 .imgPortfolio--omyFood::after {
@@ -791,6 +792,7 @@ ul {
 
 #textPortfolioBooky.moove, #textPortfolioFood.moove, #textPortfolioPanthere.moove, #textPortfolioKanap.moove, #textPortfolioSauce.moove, #textPortfolioGroupomania.moove {
   top: 324px;
+  z-index: 5;
 }
 
 .textPortfolio a {
@@ -814,7 +816,6 @@ ul {
     width: 95%;
     left: 9px;
     top: 15px;
-    z-index: -1;
   }
   .textPortfolio {
     width: 96%;
@@ -858,6 +859,7 @@ ul {
 @media screen and (min-width: 500px) and (max-width: 645px) {
   .imgPortfolio::after {
     width: 96%;
+    z-index: -1;
   }
   .textPortfolio {
     width: 96%;
