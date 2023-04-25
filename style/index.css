@@ -476,7 +476,7 @@ ul {
   .cardIntro--bienvenu {
     font-size: 30px !important;
     line-height: 60px !important;
-    top: 45px !important;
+    top: 20% !important;
   }
   .cardIntro--curiculum {
     font-size: 40px !important;
